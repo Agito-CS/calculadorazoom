@@ -122,14 +122,14 @@
             font-size: 0.9rem;
             text-align: center;
         }
-        /* Media query para pequenos dispositivos */
+        /* Media query para pequenos dispositivos (mantido, mas menos impactante agora) */
         @media (max-width: 640px) {
             .container {
-                padding: 20px; /* Mantém o padding para telas muito pequenas */
+                padding: 20px;
             }
             .radio-group label {
-                font-size: 0.95rem; /* Ajusta o tamanho da fonte para melhor visualização */
-                margin-bottom: 10px; /* Ajuste ligeiro para espaçamento em telas muito pequenas */
+                font-size: 0.95rem;
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -146,7 +146,8 @@
 
         <div class="mb-6">
             <h2 class="text-lg font-semibold text-gray-700 mb-4">Selecione o Tamanho do Crop:</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 radio-group">
+            <!-- Alterado para sempre ser uma coluna (flex flex-col) -->
+            <div class="flex flex-col gap-2 radio-group">
                 <label class="inline-flex items-center">
                     <input type="radio" name="cropSize" value="vga" checked>
                     <span class="ml-2 text-gray-700">VGA (640x480 pixels)</span>
@@ -163,7 +164,8 @@
                     <input type="radio" name="cropSize" value="12mp">
                     <span class="ml-2 text-gray-700">12MP (4000x3000 pixels)</span>
                 </label>
-                <label class="inline-flex items-center col-span-2">
+                <!-- Removido col-span-2, já que o layout é sempre em coluna -->
+                <label class="inline-flex items-center">
                     <input type="radio" name="cropSize" value="custom">
                     <span class="ml-2 text-gray-700">Personalizado (Largura x Altura em pixels):</span>
                 </label>
